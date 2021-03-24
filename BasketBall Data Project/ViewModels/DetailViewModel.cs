@@ -37,7 +37,7 @@ namespace BasketBall_Data_Project.ViewModels
 
         public Task ExecuteDetail()
         {
-            return NavigationService.NavigateAsync("DetailPage");
+            return NavigationService.NavigateAsync("Detail");
         }
 
         public void Initialize(INavigationParameters parameters)

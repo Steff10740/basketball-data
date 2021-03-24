@@ -26,7 +26,7 @@ namespace BasketBall_Data_Project.ViewModels
         public async Task ExecuteDetail()
         {
             await AlertService.DisplayAlertAsync("Alert", "Navigate to Detail", "Ok");
-            await NavigationService.NavigateAsync("DetailPage");
+            await NavigationService.NavigateAsync("Detail");
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

@@ -13,17 +13,19 @@ namespace BasketBall_Data_Project
     {
         public App(IPlatformInitializer platformInitializer = null) : base(platformInitializer) { }
         
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("NavigationPage/HomePage");
+            //await NavigationService.NavigateAsync("Home");
+            await NavigationService.NavigateAsync("/Navigate/Tabs");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>();
-            containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>();
+            containerRegistry.RegisterForNavigation<CustomTabbedPage>("Tabs");
+            containerRegistry.RegisterForNavigation<NavigationPage>("Navigate");
+            containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>("Home");
+            containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>("Detail");
         }
     }
 }
