@@ -1,4 +1,6 @@
-﻿using Prism;
+﻿using BasketBall_Data_Project.ViewModels;
+using BasketBall_Data_Project.Views;
+using Prism;
 using Prism.Ioc;
 using Prism.Unity;
 using System;
@@ -14,11 +16,14 @@ namespace BasketBall_Data_Project
         protected override void OnInitialized()
         {
             InitializeComponent();
+            NavigationService.NavigateAsync("NavigationPage/HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>();
+            containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>();
         }
     }
 }
