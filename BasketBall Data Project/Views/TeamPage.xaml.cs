@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace BasketBall_Data_Project.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class TeamPage : ContentPage
     {
-        public HomePage()
+        public TeamPage()
         {
             InitializeComponent();
         }

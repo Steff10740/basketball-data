@@ -24,8 +24,13 @@ namespace BasketBall_Data_Project
         {
             containerRegistry.RegisterForNavigation<CustomTabbedPage>("Tabs");
             containerRegistry.RegisterForNavigation<NavigationPage>("Navigate");
-            containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>("Home");
-            containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>("Detail");
+            //containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>("Home");
+            //containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>("Detail");
+
+            containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>("Standing");
+            containerRegistry.RegisterForNavigation<EventPage, EventViewModel>("Event");
+            containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>("Team");
+
         }
     }
 }

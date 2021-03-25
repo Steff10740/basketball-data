@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Prism.Unity.Forms" Version="8.0.0.1909" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
@@ -18,22 +19,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
+    <None Include="FodyWeavers.xsd" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="FodyWeavers.xsd" />
+    <Compile Update="Views\EventPage.xaml.cs">
+      <DependentUpon>EventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StandingPage.xaml.cs">
+      <DependentUpon>StandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TeamPage.xaml.cs">
+      <DependentUpon>TeamPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Views\CustomTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DetailPage.xaml">
+    <EmbeddedResource Update="Views\EventPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\HomePage.xaml">
+    <EmbeddedResource Update="Views\StandingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TeamPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
