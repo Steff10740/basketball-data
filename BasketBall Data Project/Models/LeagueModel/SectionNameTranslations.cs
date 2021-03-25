@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-namespace XamarinAPI.Models
+namespace BasketBall_Data_Project.Models.LeagueModel
 {
     public class SectionNameTranslations
     {

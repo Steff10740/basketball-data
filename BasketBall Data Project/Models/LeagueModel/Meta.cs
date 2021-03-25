@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-namespace XamarinAPI.Models
+namespace BasketBall_Data_Project.Models.LeagueModel
 {
     public class Meta
     {
