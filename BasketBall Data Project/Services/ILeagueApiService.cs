@@ -1,7 +1,7 @@
 ﻿using BasketBall_Data_Project.Models.LeagueModel;
 using System.Threading.Tasks;
 
-namespace XamarinAPI.Services
+namespace BasketBall_Data_Project.Services
 {
     public interface ILeagueApiService
     {

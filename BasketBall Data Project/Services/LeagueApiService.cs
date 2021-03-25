@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using BasketBall_Data_Project.Services;
 
-namespace XamarinAPI.Services
+namespace BasketBall_Data_Project.Services
 {
     public class LeagueApiService : ILeagueApiService
     {
