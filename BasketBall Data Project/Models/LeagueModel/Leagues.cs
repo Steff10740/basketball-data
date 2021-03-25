@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
-namespace XamarinAPI.Models
+namespace BasketBall_Data_Project.Models.LeagueModel
 {
     public class Leagues
     {
