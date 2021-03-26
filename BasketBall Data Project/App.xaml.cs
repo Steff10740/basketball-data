@@ -27,7 +27,8 @@ namespace BasketBall_Data_Project
             //containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>("Home");
             //containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>("Detail");
 
-            containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>("Standing");
+            //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>("Standing");
+            containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>("Leagues");
             containerRegistry.RegisterForNavigation<EventPage, EventViewModel>("Event");
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>("Team");
 

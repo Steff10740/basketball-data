@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using BasketBall_Data_Project.Models.LeagueModel;
 using System.Net.Http;
 using System.Threading.Tasks;
-using BasketBall_Data_Project.Services;
 
 namespace BasketBall_Data_Project.Services
 {
     public class LeagueApiService : ILeagueApiService
     {
         ISerializerService serializerService = new SerializerService();
-        public async Task<Leagues> GetBasketballLeaguesAsync()
+        public async Task<Leagues> GetLeaguesAsync()
         {
             Leagues basketballLeagues = null;
             var client = new HttpClient();

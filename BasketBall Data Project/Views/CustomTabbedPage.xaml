@@ -5,10 +5,10 @@
             x:Class="BasketBall_Data_Project.Views.CustomTabbedPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            Title="BasketBall Data App">
+            Title="NBA Access">
 
     <TabbedPage.Children>
-        <views:StandingPage/>
+        <views:LeaguePage/>
         <views:EventPage/>
         <views:TeamPage/>
     </TabbedPage.Children>
