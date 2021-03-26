@@ -16,22 +16,19 @@ namespace BasketBall_Data_Project
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            //await NavigationService.NavigateAsync("Home");
-            await NavigationService.NavigateAsync("/Navigate/Tabs");
+            await NavigationService.NavigateAsync(NavigationConst.Home);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<CustomTabbedPage>("Tabs");
-            containerRegistry.RegisterForNavigation<NavigationPage>("Navigate");
-            //containerRegistry.RegisterForNavigation<HomePage,HomeViewModel>("Home");
-            //containerRegistry.RegisterForNavigation<DetailPage,DetailViewModel>("Detail");
+            containerRegistry.RegisterForNavigation<CustomTabbedPage>(NavigationConst.Tabs);
+            containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConst.Navigate);
 
-            //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>("Standing");
-            containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>("Leagues");
-            containerRegistry.RegisterForNavigation<EventPage, EventViewModel>("Event");
-            containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>("Season");
-            containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>("Team");
+            containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConst.Standing);
+            containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConst.League);
+            containerRegistry.RegisterForNavigation<EventPage, EventViewModel>(NavigationConst.Event);
+            containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>(NavigationConst.Season);
+            containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConst.Team);
 
         }
     }

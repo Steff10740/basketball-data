@@ -5,7 +5,7 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Season List" Command="{Binding GetSeason}"/>
+        <ToolbarItem Text="Load" Command="{Binding GetSeason}"/>
     </ContentPage.ToolbarItems>
 
 

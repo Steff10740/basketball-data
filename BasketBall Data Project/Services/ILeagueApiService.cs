@@ -5,6 +5,6 @@ namespace BasketBall_Data_Project.Services
 {
     public interface ILeagueApiService
     {
-        Task<Leagues> GetLeaguesAsync();
+        Task<Leagues> GetInfoAsync(string endPoint);
     }
 }

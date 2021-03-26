@@ -13,22 +13,20 @@ using Xamarin.Essentials;
 namespace BasketBall_Data_Project.ViewModels
 {
     public class TeamViewModel : BaseViewModel
-    {
-        public override string Title { get; set; } = "Teams";
+    {        
+        public override string Title { get; set; } = Config.teamTitle;
+
+        public ObservableCollection<Datum> Teams { get; set; }
+        public ICommand GetTeams { get; }
+        private ITeamApiService teamApiService;
+        public bool IsBusy { get; set; }
+        public bool IsNotBusy => !IsBusy;
 
         public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             teamApiService = new TeamApiService();
             GetTeams = new DelegateCommand(LoadTeams);
         }
-
-        public ObservableCollection<Datum> Teams { get; set; }
-        public ICommand GetTeams { get; }
-
-        private ITeamApiService teamApiService;
-
-        public bool IsBusy { get; set; }
-        public bool IsNotBusy => !IsBusy;
 
         private async void LoadTeams()
         {
@@ -39,7 +37,7 @@ namespace BasketBall_Data_Project.ViewModels
             }
             else
             {
-                var teams = await teamApiService.GetSportsTeamsAsync();
+                var teams = await teamApiService.GetInfoAsync(Config.teamURL);
                 Teams = teams.Data;
             }
             IsBusy = false;

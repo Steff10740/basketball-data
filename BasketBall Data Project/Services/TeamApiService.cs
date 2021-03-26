@@ -9,14 +9,13 @@ namespace BasketBall_Data_Project.Services
     public class TeamApiService : ITeamApiService
     {
         ISerializerService serializerService = new SerializerService();
-
-        public async Task<Team> GetSportsTeamsAsync()
+        public async Task<Team> GetInfoAsync(string endPoint)
         {
             Team SportsTeams = null;
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://sportscore1.p.rapidapi.com/sports/3/teams"),
+                RequestUri = new Uri(endPoint),
                 Headers =
                 {
                     { "x-rapidapi-key", "4ea8d7e6f9mshd31033cdadc032bp1b5777jsn07633bf1455a" },

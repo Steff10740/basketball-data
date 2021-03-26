@@ -13,8 +13,9 @@ namespace BasketBall_Data_Project.ViewModels
 {
     public class SeasonViewModel : BaseViewModel
     {
-        ISeasonLAPIService seasonLAIService;
-        public override string Title { get; set; } = "Season";
+        public override string Title { get; set; } = Config.seasonTitle;
+
+        private ISeasonApiService seasonApiService;
         public ObservableCollection<Datum> SeasonsData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsNotBusy => !IsBusy;
@@ -22,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
 
         public SeasonViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
-            seasonLAIService = new SeasonLAPIService();
+            seasonApiService = new SeasonApiService();
             GetSeason = new Command(GetSeasonAsync);
         }
 
@@ -35,7 +36,7 @@ namespace BasketBall_Data_Project.ViewModels
             }
             else
             {
-                var SeasonList = await seasonLAIService.GetSeasonInfoAsync();
+                var SeasonList = await seasonApiService.GetInfoAsync(Config.seasonURL);
                 SeasonsData = SeasonList.Data;
             }
             IsBusy = false;

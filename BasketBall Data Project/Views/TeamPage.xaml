@@ -5,7 +5,7 @@
              Title="{Binding Title}">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Call API" Command="{Binding GetTeams}"/>
+        <ToolbarItem Text="Load" Command="{Binding GetTeams}"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">

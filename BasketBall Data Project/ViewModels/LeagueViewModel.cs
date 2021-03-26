@@ -12,12 +12,14 @@ namespace BasketBall_Data_Project.ViewModels
 {
     public class LeagueViewModel : BaseViewModel
     {
-        public override string Title { get; set; } = "Leagues";
+        public override string Title { get; set; } = Config.leagueTitle;
+
         public ObservableCollection<Datum> LeaguesData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsDataVisible { get; set; }
         public ICommand GetLeagues { get; }
         ILeagueApiService leagueApiService;
+
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             leagueApiService = new LeagueApiService();
@@ -32,7 +34,7 @@ namespace BasketBall_Data_Project.ViewModels
             }
             IsDataVisible = false;
             IsBusy = true;
-            var leagues = await leagueApiService.GetLeaguesAsync();
+            var leagues = await leagueApiService.GetInfoAsync(Config.leagueURL);
             LeaguesData = leagues.Data;
             IsBusy = false;
             IsDataVisible = true;
