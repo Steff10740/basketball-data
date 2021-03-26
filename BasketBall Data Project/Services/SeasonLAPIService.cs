@@ -10,10 +10,9 @@ namespace BasketBall_Data_Project.Services
     {
         ISerializerService serializerService = new SerializerService();
 
-        public async Task<SeasonInfo> GetSeasonInfoAsync()
+        public async Task<SeasonList> GetSeasonInfoAsync()
         {
-            SeasonInfo season = null;
-            var client = new HttpClient(); 
+            SeasonList season = null;
             var request = new HttpRequestMessage 
             { 
                 Method = HttpMethod.Get, 
@@ -24,10 +23,11 @@ namespace BasketBall_Data_Project.Services
                     { "x-rapidapi-host", "sportscore1.p.rapidapi.com" }, 
                 }, 
             };
+            var client = new HttpClient();
             var response = await client.SendAsync(request);
             if  (response.IsSuccessStatusCode)
             {
-                season = serializerService.Deserialize<SeasonInfo>(await response.Content.ReadAsStringAsync());
+                season = serializerService.Deserialize<SeasonList>(await response.Content.ReadAsStringAsync());
 
             }
             return season;

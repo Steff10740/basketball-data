@@ -7,15 +7,18 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using static BasketBall_Data_Project.Models.SeasonModel.SeasonInfo;
+using static BasketBall_Data_Project.Models.SeasonModel.SeasonList;
 
 namespace BasketBall_Data_Project.ViewModels
 {
     public class SeasonViewModel : BaseViewModel
     {
-        
         ISeasonLAPIService seasonLAIService;
-
+        public override string Title { get; set; } = "Season";
+        public ObservableCollection<Datum> SeasonsData { get; set; }
+        public bool IsBusy { get; set; }
+        public bool IsNotBusy => !IsBusy;
+        public ICommand GetSeason { get; }
 
         public SeasonViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
@@ -25,24 +28,17 @@ namespace BasketBall_Data_Project.ViewModels
 
         public async void GetSeasonAsync()
         {
+            IsBusy = true;
             if (!(Connectivity.NetworkAccess == NetworkAccess.Internet))
             {
-                await App.Current.MainPage.DisplayAlert("Aviso", "Conectese al internet", "OK");
-                return;
+                await AlertService.DisplayAlertAsync("Error", "No internet connection, try later.", "Ok");
             }
-            IsDataVisible = false;
-            IsBusy = true;
-            var SeasonList = await seasonLAIService.GetSeasonInfoAsync();
-            SeasonslData = SeasonList.Data;
+            else
+            {
+                var SeasonList = await seasonLAIService.GetSeasonInfoAsync();
+                SeasonsData = SeasonList.Data;
+            }
             IsBusy = false;
-            IsDataVisible = true;
         }
-        
-        public override string Title { get; set; } = "Season";
-        public ObservableCollection<Datum> SeasonslData { get; set; }
-        public bool IsBusy { get; set; }
-        public bool IsDataVisible { get; set; }
-        public ICommand GetSeason { get; }
     }
-        
 }

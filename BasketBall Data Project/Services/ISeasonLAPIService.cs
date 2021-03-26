@@ -5,7 +5,7 @@ namespace BasketBall_Data_Project.Services
 {
     public interface ISeasonLAPIService
     {
-        Task<SeasonInfo> GetSeasonInfoAsync();
+        Task<SeasonList> GetSeasonInfoAsync();
         
     }
 }

@@ -4,16 +4,7 @@ using Newtonsoft.Json;
 
 namespace BasketBall_Data_Project.Models.SeasonModel
 {
-    public class SeasonInfo
-        {
-        internal ObservableCollection<Datum> Data;
-
-        public class NameTranslations
-    {
-
-        [JsonProperty("en")]
-        public string En { get; set; }
-    }
+    
 
     public class Host
     {
@@ -172,98 +163,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
         public IList<object> Team { get; set; }
     }
 
-    public class TennisRanking
-    {
-
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
-        [JsonProperty("type")]
-        public string Type { get; set; }
-
-        [JsonProperty("points")]
-        public int Points { get; set; }
-
-        [JsonProperty("ranking")]
-        public int Ranking { get; set; }
-
-        [JsonProperty("official_updated_at")]
-        public string OfficialUpdatedAt { get; set; }
-
-        [JsonProperty("team")]
-        public IList<object> Team { get; set; }
-    }
-
-    public class TitleHolderTeam
-    {
-
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
-        [JsonProperty("slug")]
-        public string Slug { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("name_translations")]
-        public IList<NameTranslations> NameTranslations { get; set; }
-
-        [JsonProperty("name_short")]
-        public string NameShort { get; set; }
-
-        [JsonProperty("name_full")]
-        public string NameFull { get; set; }
-
-        [JsonProperty("name_code")]
-        public string NameCode { get; set; }
-
-        [JsonProperty("has_sub")]
-        public bool HasSub { get; set; }
-
-        [JsonProperty("has_logo")]
-        public bool HasLogo { get; set; }
-
-        [JsonProperty("logo")]
-        public string Logo { get; set; }
-
-        [JsonProperty("gender")]
-        public string Gender { get; set; }
-
-        [JsonProperty("is_nationality")]
-        public bool IsNationality { get; set; }
-
-        [JsonProperty("country_code")]
-        public string CountryCode { get; set; }
-
-        [JsonProperty("country")]
-        public string Country { get; set; }
-
-        [JsonProperty("flag")]
-        public string Flag { get; set; }
-
-        [JsonProperty("foundation")]
-        public string Foundation { get; set; }
-
-        [JsonProperty("details")]
-        public IList<Detail> Details { get; set; }
-
-        [JsonProperty("sport")]
-        public IList<Sport> Sport { get; set; }
-
-        [JsonProperty("section")]
-        public IList<Section> Section { get; set; }
-
-        [JsonProperty("venue")]
-        public IList<Venue> Venue { get; set; }
-
-        [JsonProperty("manager")]
-        public IList<Manager> Manager { get; set; }
-
-        [JsonProperty("tennis_ranking")]
-        public IList<TennisRanking> TennisRanking { get; set; }
-    }
-
     public class Detail
     {
         [JsonProperty("country")]
@@ -281,9 +180,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("name_translations")]
-        public IList<NameTranslations> NameTranslations { get; set; }
-
         [JsonProperty("name_short")]
         public string NameShort { get; set; }
 
@@ -334,9 +230,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
 
         [JsonProperty("manager")]
         public IList<Manager> Manager { get; set; }
-
-        [JsonProperty("tennis_ranking")]
-        public IList<TennisRanking> TennisRanking { get; set; }
     }
 
     public class League
@@ -350,9 +243,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
 
         [JsonProperty("name")]
         public string Name { get; set; }
-
-        [JsonProperty("name_translations")]
-        public IList<NameTranslations> NameTranslations { get; set; }
 
         [JsonProperty("has_logo")]
         public bool HasLogo { get; set; }
@@ -384,9 +274,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
         [JsonProperty("section")]
         public IList<Section> Section { get; set; }
 
-        [JsonProperty("title_holder_team")]
-        public IList<TitleHolderTeam> TitleHolderTeam { get; set; }
-
         [JsonProperty("most_titles_team")]
         public IList<MostTitlesTeam> MostTitlesTeam { get; set; }
 
@@ -396,32 +283,9 @@ namespace BasketBall_Data_Project.Models.SeasonModel
 
     public class Datum
     {
-
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
-        [JsonProperty("slug")]
-        public string Slug { get; set; }
-
         [JsonProperty("name")]
         public string Name { get; set; }
-
-        [JsonProperty("year_start")]
-        public int YearStart { get; set; }
-
-        [JsonProperty("year_end")]
-        public int YearEnd { get; set; }
-
-        [JsonProperty("league")]
-        public IList<League> League { get; set; }
     }
 
-    public class SeasonList
-    {
-
-        [JsonProperty("data")]
-        public IList<Datum> Data { get; set; }
-    }
-
-}
+   
 }

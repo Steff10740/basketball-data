@@ -30,7 +30,7 @@ namespace BasketBall_Data_Project
             //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>("Standing");
             containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>("Leagues");
             containerRegistry.RegisterForNavigation<EventPage, EventViewModel>("Event");
-            containerRegistry.RegisterForNavigation<TeamPage, SeasonViewModel>("Season");
+            containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>("Season");
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>("Team");
 
         }
