@@ -1,5 +1,5 @@
-﻿using BasketBall_Data_Project.Models.TeamModel;
-using Newtonsoft.Json;
+﻿using BasketBall_Data_Project.Constants;
+using BasketBall_Data_Project.Models.TeamModel;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -18,8 +18,8 @@ namespace BasketBall_Data_Project.Services
                 RequestUri = new Uri(endPoint),
                 Headers =
                 {
-                    { "x-rapidapi-key", "4ea8d7e6f9mshd31033cdadc032bp1b5777jsn07633bf1455a" },
-                    { "x-rapidapi-host", "sportscore1.p.rapidapi.com" },
+                    { Config.ApiKeyHeader, Config.ApiKey },
+                    { Config.ApiHostHeader, Config.ApiHost },
                 },
             };
             var client = new HttpClient();

@@ -1,4 +1,5 @@
-﻿using BasketBall_Data_Project.Models.SeasonModel;
+﻿using BasketBall_Data_Project.Constants;
+using BasketBall_Data_Project.Models.SeasonModel;
 using BasketBall_Data_Project.Services;
 using Prism.Commands;
 using Prism.Navigation;
@@ -6,8 +7,6 @@ using Prism.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Essentials;
-using Xamarin.Forms;
-using static BasketBall_Data_Project.Models.SeasonModel.SeasonList;
 
 namespace BasketBall_Data_Project.ViewModels
 {
@@ -24,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public SeasonViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             seasonApiService = new SeasonApiService();
-            GetSeason = new Command(GetSeasonAsync);
+            GetSeason = new DelegateCommand(GetSeasonAsync);
         }
 
         public async void GetSeasonAsync()

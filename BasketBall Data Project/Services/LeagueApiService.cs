@@ -2,6 +2,7 @@
 using BasketBall_Data_Project.Models.LeagueModel;
 using System.Net.Http;
 using System.Threading.Tasks;
+using BasketBall_Data_Project.Constants;
 
 namespace BasketBall_Data_Project.Services
 {
@@ -16,9 +17,10 @@ namespace BasketBall_Data_Project.Services
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri(endPoint),
-                Headers = {
-                    {"x-rapidapi-key","9ded05c9aamsh3b4b3cdf643f767p1bf8d4jsnfffa5e85dd21"},
-                    {"x-rapidapi-host","sportscore1.p.rapidapi.com"}
+                Headers = 
+                {
+                    { Config.ApiKeyHeader, Config.ApiKey },
+                    { Config.ApiHostHeader, Config.ApiHost },
                 },
             };
             var response = await client.SendAsync(request);

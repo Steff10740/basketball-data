@@ -1,4 +1,5 @@
-﻿using BasketBall_Data_Project.Models.LeagueModel;
+﻿using BasketBall_Data_Project.Constants;
+using BasketBall_Data_Project.Models.LeagueModel;
 using BasketBall_Data_Project.Services;
 using Prism.Commands;
 using Prism.Navigation;
@@ -6,7 +7,6 @@ using Prism.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace BasketBall_Data_Project.ViewModels
 {
@@ -23,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             leagueApiService = new LeagueApiService();
-            GetLeagues = new Command(GetLeaguesAsync);
+            GetLeagues = new DelegateCommand(GetLeaguesAsync);
         }
         private async void GetLeaguesAsync()
         {

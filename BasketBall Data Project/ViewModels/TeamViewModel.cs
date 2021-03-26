@@ -1,12 +1,10 @@
-﻿using BasketBall_Data_Project.Models.TeamModel;
+﻿using BasketBall_Data_Project.Constants;
+using BasketBall_Data_Project.Models.TeamModel;
 using BasketBall_Data_Project.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
 

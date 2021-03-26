@@ -2,6 +2,7 @@
 using System.Net.Http;
 using BasketBall_Data_Project.Models.SeasonModel;
 using System.Threading.Tasks;
+using BasketBall_Data_Project.Constants;
 
 namespace BasketBall_Data_Project.Services
 {
@@ -17,9 +18,9 @@ namespace BasketBall_Data_Project.Services
                 Method = HttpMethod.Get, 
                 RequestUri = new Uri(endPoint), 
                 Headers = 
-                { 
-                    { "x-rapidapi-key", "8aaee18d33msh73133a98dbb4908p146d53jsn17633aea599f" }, 
-                    { "x-rapidapi-host", "sportscore1.p.rapidapi.com" }, 
+                {
+                    { Config.ApiKeyHeader, Config.ApiKey },
+                    { Config.ApiHostHeader, Config.ApiHost },
                 }, 
             };
             var client = new HttpClient();
