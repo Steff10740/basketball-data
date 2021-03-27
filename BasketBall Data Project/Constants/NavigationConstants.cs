@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BasketBall_Data_Project
+namespace BasketBall_Data_Project.Constants
 {
-    public class NavigationConst
+    public static class NavigationConstants
     {
         public const string Home = "/Navigate/Tabs";
         public const string Tabs = "Tabs";

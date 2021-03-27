@@ -62,6 +62,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\LeagueModel\" />
+    <Folder Include="Models\League\" />
   </ItemGroup>
 </Project>

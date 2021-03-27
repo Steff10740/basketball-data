@@ -8,15 +8,19 @@ namespace BasketBall_Data_Project.Services
 {
     public class SeasonApiService : ISeasonApiService
     {
-        ISerializerService serializerService = new SerializerService();
+        ISerializerService _serializerService;
+        public SeasonApiService(ISerializerService serializerService)
+        {
+            _serializerService = serializerService;
+        }
 
-        public async Task<SeasonList> GetInfoAsync(string endPoint)
+        public async Task<SeasonList> GetInfoAsync()
         {
             SeasonList season = null;
             var request = new HttpRequestMessage 
             { 
                 Method = HttpMethod.Get, 
-                RequestUri = new Uri(endPoint), 
+                RequestUri = new Uri($"{Config.ApiUrl}/seasons"), 
                 Headers = 
                 {
                     { Config.ApiKeyHeader, Config.ApiKey },
@@ -27,7 +31,7 @@ namespace BasketBall_Data_Project.Services
             var response = await client.SendAsync(request);
             if  (response.IsSuccessStatusCode)
             {
-                season = serializerService.Deserialize<SeasonList>(await response.Content.ReadAsStringAsync());
+                season = _serializerService.Deserialize<SeasonList>(await response.Content.ReadAsStringAsync());
             }
             return season;
         }

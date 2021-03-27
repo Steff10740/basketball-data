@@ -8,14 +8,19 @@ namespace BasketBall_Data_Project.Services
 {
     public class TeamApiService : ITeamApiService
     {
-        ISerializerService serializerService = new SerializerService();
-        public async Task<Team> GetInfoAsync(string endPoint)
+        ISerializerService _serializerService;
+        public TeamApiService(ISerializerService serializerService)
+        {
+            _serializerService = serializerService;
+        }
+
+        public async Task<Team> GetInfoAsync()
         {
             Team SportsTeams = null;
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(endPoint),
+                RequestUri = new Uri($"{Config.ApiUrl}/teams"),
                 Headers =
                 {
                     { Config.ApiKeyHeader, Config.ApiKey },
@@ -26,7 +31,7 @@ namespace BasketBall_Data_Project.Services
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
-                SportsTeams = serializerService.Deserialize<Team>(await response.Content.ReadAsStringAsync());
+                SportsTeams = _serializerService.Deserialize<Team>(await response.Content.ReadAsStringAsync());
             }
             return SportsTeams;
         }

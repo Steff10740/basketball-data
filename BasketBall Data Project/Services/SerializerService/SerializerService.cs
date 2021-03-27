@@ -6,9 +6,9 @@ namespace BasketBall_Data_Project.Services
 {
     public class SerializerService : ISerializerService
     {
-        public T Deserialize<T>(string DesData)
+        public T Deserialize<T>(string desData)
         {
-            return JsonConvert.DeserializeObject<T>(DesData);
+            return JsonConvert.DeserializeObject<T>(desData);
         }
 
         public string Serialize(object data)

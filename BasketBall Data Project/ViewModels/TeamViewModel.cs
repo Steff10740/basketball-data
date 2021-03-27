@@ -12,17 +12,17 @@ namespace BasketBall_Data_Project.ViewModels
 {
     public class TeamViewModel : BaseViewModel
     {        
-        public override string Title { get; set; } = Config.teamTitle;
+        public override string Title { get; set; } = Config.TeamTitle;
 
         public ObservableCollection<Datum> Teams { get; set; }
         public ICommand GetTeams { get; }
-        private ITeamApiService teamApiService;
+        private ITeamApiService _teamApiService;
         public bool IsBusy { get; set; }
         public bool IsNotBusy => !IsBusy;
 
-        public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
+        public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ITeamApiService teamApiService) : base(navigationService, pageDialogService)
         {
-            teamApiService = new TeamApiService();
+            _teamApiService = teamApiService;
             GetTeams = new DelegateCommand(LoadTeams);
         }
 
@@ -35,7 +35,7 @@ namespace BasketBall_Data_Project.ViewModels
             }
             else
             {
-                var teams = await teamApiService.GetInfoAsync(Config.teamURL);
+                var teams = await _teamApiService.GetInfoAsync();
                 Teams = teams.Data;
             }
             IsBusy = false;
