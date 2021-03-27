@@ -9,7 +9,7 @@ namespace BasketBall_Data_Project.Constants
         // Api EndPoints
         public const string teamURL = "https://sportscore1.p.rapidapi.com/sports/3/teams";
         public const string leagueURL = "https://sportscore1.p.rapidapi.com/sports/3/leagues";
-        public const string seasonURL = "https://sportscore1.p.rapidapi.com/sports/3/seasons";
+        public const string seasonURL = "https://sportscore1.p.rapidapi.com/seasons";
 
         // Tabs' Titles
         public const string teamTitle = "Teams";
