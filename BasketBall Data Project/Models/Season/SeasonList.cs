@@ -9,6 +9,6 @@ namespace BasketBall_Data_Project.Models.SeasonModel
     public class SeasonList
     {
         [JsonProperty("data")]
-        public ObservableCollection<Datum> Data { get; set; }
+        public ObservableCollection<Data> Data { get; set; }
     }
 }

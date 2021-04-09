@@ -15,7 +15,7 @@ namespace BasketBall_Data_Project.ViewModels
         public override string Title { get; set; } = Config.SeasonTitle;
 
         private ISeasonApiService _seasonApiService;
-        public ObservableCollection<Datum> SeasonsData { get; set; }
+        public ObservableCollection<Data> SeasonsData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsNotBusy => !IsBusy;
         public ICommand GetSeason { get; }
@@ -23,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public SeasonViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ISeasonApiService seasonApiService) : base(navigationService, pageDialogService)
         {
             _seasonApiService = seasonApiService;
-            GetSeason = new DelegateCommand(GetSeasonAsync);
+            GetSeasonAsync();
         }
 
         public async void GetSeasonAsync()

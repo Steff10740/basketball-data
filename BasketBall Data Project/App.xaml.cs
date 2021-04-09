@@ -27,11 +27,12 @@ namespace BasketBall_Data_Project
             containerRegistry.Register<ISeasonApiService, SeasonApiService>();
             containerRegistry.Register<ILeagueApiService, LeagueApiService>();
             containerRegistry.Register<ISerializerService, SerializerService>();
+            containerRegistry.Register<IEventApiService, EventApiService>();
 
             containerRegistry.RegisterForNavigation<CustomTabbedPage>(NavigationConstants.Tabs);
             containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Navigate);
 
-            containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConstants.Standing);
+            //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConstants.Standing);
             containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConstants.League);
             containerRegistry.RegisterForNavigation<EventPage, EventViewModel>(NavigationConstants.Event);
             containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>(NavigationConstants.Season);

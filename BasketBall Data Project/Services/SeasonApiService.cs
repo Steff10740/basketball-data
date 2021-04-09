@@ -20,7 +20,7 @@ namespace BasketBall_Data_Project.Services
             var request = new HttpRequestMessage 
             { 
                 Method = HttpMethod.Get, 
-                RequestUri = new Uri($"{Config.ApiUrl}/seasons"), 
+                RequestUri = new Uri($"{Config.ApiUrl}/seasons/1"), 
                 Headers = 
                 {
                     { Config.ApiKeyHeader, Config.ApiKey },

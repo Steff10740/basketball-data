@@ -23,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
             _leagueApiService = leagueApiService;
-            GetLeagues = new DelegateCommand(GetLeaguesAsync);
+            GetLeaguesAsync();
         }
         private async void GetLeaguesAsync()
         {

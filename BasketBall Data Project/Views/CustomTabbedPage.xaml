@@ -9,7 +9,7 @@
 
     <TabbedPage.Children>
         <views:LeaguePage/>
-        <views:SeasonPage/>
+        <views:EventPage/>
         <views:TeamPage/>
     </TabbedPage.Children>
 </TabbedPage>

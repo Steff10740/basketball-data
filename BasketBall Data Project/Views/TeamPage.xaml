@@ -3,10 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BasketBall_Data_Project.Views.TeamPage"
              Title="{Binding Title}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Load" Command="{Binding GetTeams}"/>
-    </ContentPage.ToolbarItems>
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>

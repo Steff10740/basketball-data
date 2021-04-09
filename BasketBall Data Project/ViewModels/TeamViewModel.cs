@@ -23,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ITeamApiService teamApiService) : base(navigationService, pageDialogService)
         {
             _teamApiService = teamApiService;
-            GetTeams = new DelegateCommand(LoadTeams);
+            LoadTeams();
         }
 
         private async void LoadTeams()
@@ -40,5 +40,10 @@ namespace BasketBall_Data_Project.ViewModels
             }
             IsBusy = false;
         }
+
+        //private async void OnPlaceSelected(Team team)
+        //{
+        //    await NavigationService.NavigateAsync(Config.);
+        //}
     }
 }

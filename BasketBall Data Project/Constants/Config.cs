@@ -13,6 +13,7 @@ namespace BasketBall_Data_Project.Constants
         public const string TeamTitle = "Teams";
         public const string LeagueTitle = "Leagues";
         public const string SeasonTitle = "Seasons";
+        public const string EventTitle = "Events";
 
         // Api Request Headers
         public const string ApiHostHeader = "x-rapidapi-host";

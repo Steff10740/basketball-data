@@ -4,11 +4,6 @@
              x:Class="BasketBall_Data_Project.Views.SeasonPage"
              Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Load" Command="{Binding GetSeason}"/>
-    </ContentPage.ToolbarItems>
-
-
     <ContentPage.Content>
         <Grid RowDefinitions="*" ColumnDefinitions="*">
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"  Grid.Row="0"/>
