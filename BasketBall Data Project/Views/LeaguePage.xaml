@@ -16,7 +16,9 @@
       <ListView ItemsSource="{Binding LeaguesData}" IsVisible="{Binding IsDataVisible}" Grid.Row="0">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <TextCell Text="{Binding Name}" TextColor="Black"/>
+            <ImageCell ImageSource="{Binding Logo}" 
+                       Text="{Binding Name}" 
+                       TextColor="Black"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
