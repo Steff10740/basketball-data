@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BasketBall_Data_Project.Views.LeaguePage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             x:Name="leagueDetails"
+             xmlns:b="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
 
   <ContentPage.Content>
     <Grid RowDefinitions="*" ColumnDefinitions="*">
@@ -16,12 +18,15 @@
       <ListView ItemsSource="{Binding LeaguesData}" 
                 IsVisible="{Binding IsDataVisible}" 
                 Grid.Row="0">
+        <ListView.Behaviors>
+          <b:SelectedItemBehavior Command="{Binding BindingContext.ShowDetails,
+                                  Source={x:Reference leagueDetails}}"/>
+        </ListView.Behaviors>
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ImageCell ImageSource="{Binding Logo}" 
+            <TextCell 
                        Text="{Binding Name}" 
-                       TextColor="Black"
-                       Command="{Binding ShowDetails}"/>
+                       TextColor="Black"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

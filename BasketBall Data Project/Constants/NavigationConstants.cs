@@ -6,7 +6,7 @@ namespace BasketBall_Data_Project.Constants
 {
     public static class NavigationConstants
     {
-        public const string Navigate = "/Navigate";
+        public const string Navigate = "Navigate";
         public const string Tabs = "Tabs";
         public const string Standing = "Standing";
         public const string League = "League";

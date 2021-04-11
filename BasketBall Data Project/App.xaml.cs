@@ -18,7 +18,7 @@ namespace BasketBall_Data_Project
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync($"{NavigationConstants.Navigate}/{NavigationConstants.Tabs}");
+            await NavigationService.NavigateAsync("/Navigate/Tabs");//{NavigationConstants.Navigate}/{NavigationConstants.Tabs}
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
