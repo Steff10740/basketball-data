@@ -13,12 +13,15 @@
                          VerticalOptions="Center"
                          Grid.Row="0"/>
 
-      <ListView ItemsSource="{Binding LeaguesData}" IsVisible="{Binding IsDataVisible}" Grid.Row="0">
+      <ListView ItemsSource="{Binding LeaguesData}" 
+                IsVisible="{Binding IsDataVisible}" 
+                Grid.Row="0">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ImageCell ImageSource="{Binding Logo}" 
                        Text="{Binding Name}" 
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       Command="{Binding ShowDetails}"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

@@ -7,23 +7,32 @@ using Prism.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace BasketBall_Data_Project.ViewModels
 {
     public class LeagueViewModel : BaseViewModel
     {
         public override string Title { get; set; } = Config.LeagueTitle;
-
         public ObservableCollection<Datum> LeaguesData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsDataVisible { get; set; }
-        public ICommand GetLeagues { get; }
+        public ICommand ShowDetails { get; }
         ILeagueApiService _leagueApiService;
 
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
             _leagueApiService = leagueApiService;
             GetLeaguesAsync();
+
+            ShowDetails = new Command<Datum>(async (leagueDetails) =>
+            {
+                var navParameters = new NavigationParameters
+                {
+                    {"details", leagueDetails}
+                };
+                await NavigationService.NavigateAsync($"{NavigationConstants.Navigate}/{NavigationConstants.LeagueDetails}", navParameters);
+            });
         }
         private async void GetLeaguesAsync()
         {

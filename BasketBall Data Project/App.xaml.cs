@@ -18,7 +18,7 @@ namespace BasketBall_Data_Project
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync(NavigationConstants.Home);
+            await NavigationService.NavigateAsync($"{NavigationConstants.Navigate}/{NavigationConstants.Tabs}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -37,6 +37,7 @@ namespace BasketBall_Data_Project
             containerRegistry.RegisterForNavigation<EventPage, EventViewModel>(NavigationConstants.Event);
             containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>(NavigationConstants.Season);
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConstants.Team);
+            containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
 
         }
     }
