@@ -17,7 +17,15 @@ namespace BasketBall_Data_Project.ViewModels
         public ObservableCollection<Datum> LeaguesData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsDataVisible { get; set; }
-        public ICommand ShowDetails { get; set; }
+        public ICommand ShowDetails => new DelegateCommand<Datum>(async (leagueDetails) =>
+        {
+            /*var navParameters = new NavigationParameters
+                {
+                    {"details", leagueDetails}
+                };*/
+            await NavigationService.NavigateAsync("/Navigate/LeagueDetails");
+        });
+
         ILeagueApiService _leagueApiService;
 
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
@@ -25,14 +33,14 @@ namespace BasketBall_Data_Project.ViewModels
             _leagueApiService = leagueApiService;
             
 
-            ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
+            /*ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
             {
                 var navParameters = new NavigationParameters
                 {
                     {"details", leagueDetails}
                 };
                 await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
-            });
+            });*/
             GetLeaguesAsync();
         }
         private async void GetLeaguesAsync()
@@ -49,14 +57,5 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = false;
             IsDataVisible = true;
         }
-
-        /*public async void ShowDetails(object sender, ItemTappedEventArgs e)
-        {
-            var navParameters = new NavigationParameters
-                {
-                    {"details", e.Item}
-                };
-            await NavigationService.NavigateAsync($"{NavigationConstants.Navigate}/{NavigationConstants.LeagueDetails}", navParameters);
-        }*/
     }
 }

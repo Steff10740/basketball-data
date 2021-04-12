@@ -19,8 +19,7 @@
                 IsVisible="{Binding IsDataVisible}" 
                 Grid.Row="0">
         <ListView.Behaviors>
-          <b:SelectedItemBehavior Command="{Binding BindingContext.ShowDetails,
-                                  Source={x:Reference leagueDetails}}"/>
+          <b:SelectedItemBehavior Command="{Binding ShowDetails}"/>
         </ListView.Behaviors>
         <ListView.ItemTemplate>
           <DataTemplate>
