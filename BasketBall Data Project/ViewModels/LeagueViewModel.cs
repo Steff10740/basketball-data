@@ -4,6 +4,7 @@ using BasketBall_Data_Project.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -17,30 +18,53 @@ namespace BasketBall_Data_Project.ViewModels
         public ObservableCollection<Datum> LeaguesData { get; set; }
         public bool IsBusy { get; set; }
         public bool IsDataVisible { get; set; }
-        public ICommand ShowDetails => new DelegateCommand<Datum>(async (leagueDetails) =>
-        {
-            /*var navParameters = new NavigationParameters
-                {
-                    {"details", leagueDetails}
-                };*/
-            await NavigationService.NavigateAsync("/Navigate/LeagueDetails");
-        });
+
+        //private ICommand SelectedItemCommand { get; }
+
+        //private Datum _item;
+        //public Datum SelectedItem
+        //{
+        //    get
+        //    {
+        //        return _item;
+        //    }
+        //    set
+        //    {
+        //        _item = value;
+
+        //        if (_item != null)
+        //        {
+
+        //            SelectedItemCommand.Execute(_item);
+        //        }
+        //    }
+        //}
+
+        //public ICommand ShowDetails => new DelegateCommand<Datum>(async (leagueDetails) =>
+        //{
+        //    /*var navParameters = new NavigationParameters
+        //        {
+        //            {"details", leagueDetails}
+        //        };*/
+        //    await NavigationService.NavigateAsync("/Navigate/LeagueDetails");
+        //});
 
         ILeagueApiService _leagueApiService;
 
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
             _leagueApiService = leagueApiService;
-            
 
-            /*ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
-            {
-                var navParameters = new NavigationParameters
-                {
-                    {"details", leagueDetails}
-                };
-                await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
-            });*/
+            //SelectedItemCommand = new Command<Datum>(OnItemSelected);
+
+            //ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
+            //{
+            //    var navParameters = new NavigationParameters
+            //    {
+            //        {"details", leagueDetails}
+            //    };
+            //    await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
+            //});
             GetLeaguesAsync();
         }
         private async void GetLeaguesAsync()
@@ -57,5 +81,15 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = false;
             IsDataVisible = true;
         }
+
+        //private async void OnItemSelected(Datum leagueDetail)
+        //{
+        //    //var navParameters = new NavigationParameters
+        //    //{
+        //    //    {"details", leagueDetails}
+        //    //};
+        //    //await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
+        //    await AlertService.DisplayAlertAsync("League", leagueDetail.Name, "Ok");
+        //}
     }
 }

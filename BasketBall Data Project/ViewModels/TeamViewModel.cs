@@ -41,7 +41,7 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = false;
         }
 
-        //private async void OnPlaceSelected(Team team)
+        //private async void OnPlaceSelected(Datum team)
         //{
         //    await NavigationService.NavigateAsync(Config.);
         //}

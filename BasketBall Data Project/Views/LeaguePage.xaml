@@ -17,10 +17,10 @@
 
       <ListView ItemsSource="{Binding LeaguesData}" 
                 IsVisible="{Binding IsDataVisible}" 
-                Grid.Row="0">
-        <ListView.Behaviors>
-          <b:SelectedItemBehavior Command="{Binding ShowDetails}"/>
-        </ListView.Behaviors>
+                Grid.Row="0"
+                
+                ItemTapped="OnItemSelected">
+        
         <ListView.ItemTemplate>
           <DataTemplate>
             <TextCell 

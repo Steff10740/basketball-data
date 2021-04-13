@@ -12,9 +12,11 @@ namespace BasketBall_Data_Project.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LeagueDetailsPage : ContentPage
     {
-        public LeagueDetailsPage()
+        public LeagueDetailsPage(string name)
         {
             InitializeComponent();
+
+            LabelName.Text = name;
         }
     }
 }

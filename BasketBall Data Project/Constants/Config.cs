@@ -20,6 +20,6 @@ namespace BasketBall_Data_Project.Constants
         public const string ApiHostHeader = "x-rapidapi-host";
         public const string ApiKeyHeader = "x-rapidapi-key";
         public const string ApiHost = "sportscore1.p.rapidapi.com";
-        public const string ApiKey = "4ea8d7e6f9mshd31033cdadc032bp1b5777jsn07633bf1455a";
+        public const string ApiKey = "5db3d1a402mshfaac0a322055c8bp160d52jsn28ee48f46c4e";
     }
 }
