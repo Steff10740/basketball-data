@@ -5,6 +5,7 @@ using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 
@@ -16,12 +17,16 @@ namespace BasketBall_Data_Project.ViewModels
 
         public ObservableCollection<Datum> Teams { get; set; }
         public ICommand GetTeams { get; }
+
+        public ICommand ShowDetailCommand { get; }
+
         private ITeamApiService _teamApiService;
         public bool IsBusy { get; set; }
         public bool IsNotBusy => !IsBusy;
 
         public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ITeamApiService teamApiService) : base(navigationService, pageDialogService)
         {
+            ShowDetailCommand = new DelegateCommand(async () => await OnItemSelected());
             _teamApiService = teamApiService;
             LoadTeams();
         }
@@ -39,6 +44,11 @@ namespace BasketBall_Data_Project.ViewModels
                 Teams = teams.Data;
             }
             IsBusy = false;
+        }
+
+        private Task OnItemSelected()
+        {
+            return NavigationService.NavigateAsync(NavigationConstants.LeagueDetails);
         }
 
         //private async void OnPlaceSelected(Datum team)

@@ -19,6 +19,8 @@ namespace BasketBall_Data_Project.ViewModels
         public bool IsBusy { get; set; }
         public bool IsDataVisible { get; set; }
 
+        public ICommand ShowDetails { get; }
+
         //private ICommand SelectedItemCommand { get; }
 
         //private Datum _item;
@@ -40,7 +42,7 @@ namespace BasketBall_Data_Project.ViewModels
         //    }
         //}
 
-        public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
+        //public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
         //{
         //    /*var navParameters = new NavigationParameters
         //        {
@@ -83,14 +85,35 @@ namespace BasketBall_Data_Project.ViewModels
             IsDataVisible = true;
         }
 
-        //private async void OnItemSelected(Datum leagueDetail)
-        //{
-        //    //var navParameters = new NavigationParameters
-        //    //{
-        //    //    {"details", leagueDetails}
-        //    //};
-        //    //await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
-        //    await AlertService.DisplayAlertAsync("League", leagueDetail.Name, "Ok");
-        //}
+        private async void OnItemSelected(Datum leagueDetail)
+        {
+            var parameters = new NavigationParameters()
+            {
+                { "Name" , leagueDetail.Name}
+            };
+            //parameters.Add("Phone", Phone);
+            await NavigationService.GoBackAsync(parameters);
+
+
+
+            //var parameters = new NavigationParameters();
+            //await NavigationService.NavigateAsync(NavigationConstants.LeagueDetails, parameters);
+            //var navParameters = new NavigationParameters
+            //{
+            //    {"details", leagueDetails}
+            //};
+            //await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
+            await AlertService.DisplayAlertAsync("League", leagueDetail.Name, "Ok");
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
