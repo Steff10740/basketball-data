@@ -21,36 +21,6 @@ namespace BasketBall_Data_Project.ViewModels
 
         public ICommand ShowDetails { get; }
 
-        //private ICommand SelectedItemCommand { get; }
-
-        //private Datum _item;
-        //public Datum SelectedItem
-        //{
-        //    get
-        //    {
-        //        return _item;
-        //    }
-        //    set
-        //    {
-        //        _item = value;
-
-        //        if (_item != null)
-        //        {
-
-        //            SelectedItemCommand.Execute(_item);
-        //        }
-        //    }
-        //}
-
-        //public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
-        //{
-        //    /*var navParameters = new NavigationParameters
-        //        {
-        //            {"details", leagueDetails}
-        //        };*/
-        //    await NavigationService.NavigateAsync("/Navigate/LeagueDetails");
-        //});*/
-
         ILeagueApiService _leagueApiService;
         public INavigationService _navigationService { get; set; }
 
@@ -59,7 +29,6 @@ namespace BasketBall_Data_Project.ViewModels
             _leagueApiService = leagueApiService;
             _navigationService = navigationService;
 
-            //SelectedItemCommand = new Command<Datum>(OnItemSelected);
             GetLeaguesAsync();
             ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
             {
@@ -67,7 +36,7 @@ namespace BasketBall_Data_Project.ViewModels
                 {
                     {"details", leagueDetails}
                 }; 
-                await _navigationService.NavigateAsync("/Navigate/Tabs/Leagues/LeagueDetails",navParameters);
+                await _navigationService.NavigateAsync(NavigationConstants.LeagueDetails,navParameters);
             });            
         }
         private async void GetLeaguesAsync()
@@ -83,27 +52,6 @@ namespace BasketBall_Data_Project.ViewModels
             LeaguesData = leagues.Data;
             IsBusy = false;
             IsDataVisible = true;
-        }
-
-        private async void OnItemSelected(Datum leagueDetail)
-        {
-            var parameters = new NavigationParameters()
-            {
-                { "Name" , leagueDetail.Name}
-            };
-            //parameters.Add("Phone", Phone);
-            await NavigationService.GoBackAsync(parameters);
-
-
-
-            //var parameters = new NavigationParameters();
-            //await NavigationService.NavigateAsync(NavigationConstants.LeagueDetails, parameters);
-            //var navParameters = new NavigationParameters
-            //{
-            //    {"details", leagueDetails}
-            //};
-            //await NavigationService.NavigateAsync("/Navigate/League/LeagueDetails", navParameters);
-            await AlertService.DisplayAlertAsync("League", leagueDetail.Name, "Ok");
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

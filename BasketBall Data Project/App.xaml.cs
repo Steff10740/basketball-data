@@ -36,10 +36,12 @@ namespace BasketBall_Data_Project
 
             //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConstants.Standing);
             containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConstants.League);
-            containerRegistry.RegisterForNavigation<EventPage, EventViewModel>(NavigationConstants.Event);
-            containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>(NavigationConstants.Season);
+            containerRegistry.RegisterForNavigation<EventPage, LiveGameViewModel>(NavigationConstants.Event);
+            containerRegistry.RegisterForNavigation<SeasonPage, LeagueViewModel>(NavigationConstants.Season);
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConstants.Team);
             containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
+            containerRegistry.RegisterForNavigation<TeamDetailsPage, TeamDetailsViewModel>(NavigationConstants.TeamDetails);
+            containerRegistry.RegisterForNavigation<LiveGameDetailsPage, LiveGameDetailsViewModel>(NavigationConstants.LiveGameDetails);
 
         }
     }

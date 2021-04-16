@@ -14,6 +14,7 @@ namespace BasketBall_Data_Project.ViewModels
         public override string Title { get; set; } = Config.DetailsTitle;
         public Datum LeagueDetails { get; set; }
         public string Name { get; set; }
+        public string Logo { get; set; }
 
         public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
@@ -29,6 +30,7 @@ namespace BasketBall_Data_Project.ViewModels
         {
             LeagueDetails = parameters.GetValue<Datum>("details");
             Name = LeagueDetails.Name;
+            Logo = LeagueDetails.Logo;
         }
     }
 }

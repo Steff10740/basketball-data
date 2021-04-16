@@ -19,6 +19,7 @@ namespace BasketBall_Data_Project.ViewModels
         public ICommand GetTeams { get; }
 
         public ICommand ShowDetailCommand { get; }
+        public INavigationService _navigationService { get; set; }
 
         private ITeamApiService _teamApiService;
         public bool IsBusy { get; set; }
@@ -26,9 +27,19 @@ namespace BasketBall_Data_Project.ViewModels
 
         public TeamViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ITeamApiService teamApiService) : base(navigationService, pageDialogService)
         {
-            ShowDetailCommand = new DelegateCommand(async () => await OnItemSelected());
             _teamApiService = teamApiService;
+            _navigationService = navigationService;
+
             LoadTeams();
+
+            ShowDetails = new DelegateCommand<Datum>(async (teamDetails) =>
+            {
+                var navParameters = new NavigationParameters
+                {
+                    {"details", teamDetails}
+                };
+                await _navigationService.NavigateAsync(NavigationConstants.TeamDetails, navParameters);
+            });
         }
 
         private async void LoadTeams()
@@ -46,14 +57,8 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = false;
         }
 
-        private Task OnItemSelected()
-        {
-            return NavigationService.NavigateAsync(NavigationConstants.LeagueDetails);
-        }
+        public ICommand ShowDetails { get; }
 
-        //private async void OnPlaceSelected(Datum team)
-        //{
-        //    await NavigationService.NavigateAsync(Config.);
-        //}
     }
+
 }

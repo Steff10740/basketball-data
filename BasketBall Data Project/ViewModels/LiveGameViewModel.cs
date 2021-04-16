@@ -1,7 +1,7 @@
 ﻿using BasketBall_Data_Project.Constants;
 using BasketBall_Data_Project.Models;
-using BasketBall_Data_Project.Models.SeasonModel;
 using BasketBall_Data_Project.Services;
+using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using System;
@@ -13,22 +13,35 @@ using Xamarin.Essentials;
 
 namespace BasketBall_Data_Project.ViewModels
 {
-    public class EventViewModel : BaseViewModel
+    public class LiveGameViewModel : BaseViewModel
     {
-        public override string Title { get; set; } = Config.EventTitle;
+        public override string Title { get; set; } = Config.LiveGamesTitle;
 
         public ObservableCollection<Datum> Events { get; set; }
         private IEventApiService _eventApiService;
         public bool IsBusy { get; set; }
         public bool IsNotBusy => !IsBusy;
+        public ICommand ShowDetails { get; }
+        public INavigationService _navigationService { get; set; }
 
-        public EventViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IEventApiService eventApiService) : base(navigationService, pageDialogService)
+        public LiveGameViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IEventApiService eventApiService) : base(navigationService, pageDialogService)
         {
             _eventApiService = eventApiService;
-            LoadEvents();
+            _navigationService = navigationService;
+            LoadLiveGames();
+            
+
+            ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
+            {
+                var navParameters = new NavigationParameters
+                {
+                    {"details", gameDetails}
+                };
+                await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
+            });
         }
 
-        private async void LoadEvents()
+        private async void LoadLiveGames()
         {
             IsBusy = true;
             if (!(Connectivity.NetworkAccess == NetworkAccess.Internet))
