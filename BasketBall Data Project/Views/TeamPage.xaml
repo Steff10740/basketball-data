@@ -6,7 +6,10 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-        <ListView x:Name="TeamsList" IsVisible="{Binding IsNotBusy}" ItemsSource="{Binding Teams}">
+        <ListView x:Name="TeamsList" IsVisible="{Binding IsNotBusy}" 
+                  ItemsSource="{Binding Teams}"
+                  SelectedItem="{Binding ShowDetailCommand}"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                   <ImageCell ImageSource="{Binding Logo}"

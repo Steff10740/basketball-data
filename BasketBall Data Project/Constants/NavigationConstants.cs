@@ -14,5 +14,7 @@ namespace BasketBall_Data_Project.Constants
         public const string Season = "Season";
         public const string Team = "Team";
         public const string LeagueDetails = "LeagueDetails";
+        public const string View = "View";
+        public const string ViewDetail = "ViewDetail";
     }
 }

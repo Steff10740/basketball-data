@@ -4,7 +4,10 @@
              x:Class="BasketBall_Data_Project.Views.LeagueDetailsPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="LabelName" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="LabelName" VerticalOptions="Center" HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="Large"
+                   />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
