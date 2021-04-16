@@ -48,7 +48,7 @@ namespace BasketBall_Data_Project.ViewModels
 
         private Task OnItemSelected()
         {
-            return NavigationService.NavigateAsync(NavigationConstants.ViewDetail);
+            return NavigationService.NavigateAsync(NavigationConstants.LeagueDetails);
         }
 
         //private async void OnPlaceSelected(Datum team)

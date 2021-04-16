@@ -67,7 +67,7 @@ namespace BasketBall_Data_Project.ViewModels
                 {
                     {"details", leagueDetails}
                 };*/
-                await _navigationService.NavigateAsync("/Navigate/Tabs/Leagues/LeagueDetails");
+                await _navigationService.NavigateAsync(NavigationConstants.LeagueDetails);
             });
             
         }
