@@ -23,7 +23,7 @@
         
         <ListView.ItemTemplate>
           <DataTemplate>
-            <TextCell 
+            <ImageCell ImageSource="{Binding Logo}" 
                        Text="{Binding Name}" 
                        TextColor="Black"/>
           </DataTemplate>
