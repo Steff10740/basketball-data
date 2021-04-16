@@ -31,13 +31,15 @@ namespace BasketBall_Data_Project
 
             containerRegistry.RegisterForNavigation<CustomTabbedPage>(NavigationConstants.Tabs);
             containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Navigate);
+            containerRegistry.RegisterForNavigation<LeaguePage>("Leagues");
+            containerRegistry.RegisterForNavigation<LeagueDetailsPage>("LeagueDetails");
 
             //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConstants.Standing);
-            containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConstants.League);
+            containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>("Leagues");
             containerRegistry.RegisterForNavigation<EventPage, EventViewModel>(NavigationConstants.Event);
             containerRegistry.RegisterForNavigation<SeasonPage, SeasonViewModel>(NavigationConstants.Season);
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConstants.Team);
-            containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
+            containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>("LeagueDetails");
 
         }
     }

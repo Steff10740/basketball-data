@@ -4,7 +4,7 @@
              x:Class="BasketBall_Data_Project.Views.LeaguePage"
              Title="{Binding Title}"
              x:Name="leagueDetails"
-             xmlns:b="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
+             xmlns:prism="http://prismlibrary.com">
 
   <ContentPage.Content>
     <Grid RowDefinitions="*" ColumnDefinitions="*">
@@ -17,10 +17,11 @@
 
       <ListView ItemsSource="{Binding LeaguesData}" 
                 IsVisible="{Binding IsDataVisible}" 
-                Grid.Row="0"
-                
-                ItemTapped="OnItemSelected">
-        
+                Grid.Row="0">
+        <ListView.Behaviors>
+          <prism:EventToCommandBehavior EventName="ItemTapped"
+                                        Command="{Binding ShowDetails}"/>
+        </ListView.Behaviors>        
         <ListView.ItemTemplate>
           <DataTemplate>
             <ImageCell ImageSource="{Binding Logo}" 
