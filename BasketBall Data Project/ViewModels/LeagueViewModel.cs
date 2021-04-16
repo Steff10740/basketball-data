@@ -42,23 +42,34 @@ namespace BasketBall_Data_Project.ViewModels
         //    }
         //}
 
-        //public ICommand ShowDetails => new DelegateCommand<Datum>(async (leagueDetails) =>
+        public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
         //{
         //    /*var navParameters = new NavigationParameters
         //        {
         //            {"details", leagueDetails}
         //        };*/
         //    await NavigationService.NavigateAsync("/Navigate/LeagueDetails");
-        //});
+        //});*/
 
         ILeagueApiService _leagueApiService;
+        public INavigationService _navigationService { get; set; }
 
         public LeagueViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
             _leagueApiService = leagueApiService;
+            _navigationService = navigationService;
 
-            
+            //SelectedItemCommand = new Command<Datum>(OnItemSelected);
             GetLeaguesAsync();
+            ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
+            {
+                /*var navParameters = new NavigationParameters
+                {
+                    {"details", leagueDetails}
+                };*/
+                await _navigationService.NavigateAsync("/Navigate/Tabs/Leagues/LeagueDetails");
+            });
+            
         }
         private async void GetLeaguesAsync()
         {
