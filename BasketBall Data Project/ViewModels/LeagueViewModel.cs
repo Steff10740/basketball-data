@@ -42,7 +42,7 @@ namespace BasketBall_Data_Project.ViewModels
         //    }
         //}
 
-        public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
+        //public ICommand ShowDetails { get; set; } /*=> new DelegateCommand<Datum>(async (leagueDetails) =>
         //{
         //    /*var navParameters = new NavigationParameters
         //        {

@@ -19,14 +19,6 @@ namespace BasketBall_Data_Project.ViewModels
         {
             Name = "nop";// LeagueDetails.Name;
         }
+    } 
 
-        /*public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            //throw new NotImplementedException();
-        }
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            LeagueDetails = parameters.GetValue<Datum>("details");
-        }
-    }
 }
