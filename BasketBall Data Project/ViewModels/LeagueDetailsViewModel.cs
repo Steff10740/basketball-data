@@ -9,7 +9,7 @@ using Prism.Services;
 
 namespace BasketBall_Data_Project.ViewModels
 {
-    public class LeagueDetailsViewModel : BaseViewModel//, INavigationAware
+    public class LeagueDetailsViewModel : BaseViewModel, INavigationAware
     {
         public override string Title { get; set; } = Config.DetailsTitle;
         public Datum LeagueDetails { get; set; }
@@ -17,16 +17,18 @@ namespace BasketBall_Data_Project.ViewModels
 
         public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
         {
-            Name = "nop";// LeagueDetails.Name;
+            //string name = LeagueDetails.Name;
+            //Name = name; //LeagueDetails.Name;
         }
 
-        /*public void OnNavigatedFrom(INavigationParameters parameters)
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
             //throw new NotImplementedException();
         }
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             LeagueDetails = parameters.GetValue<Datum>("details");
-        }*/
+            Name = LeagueDetails.Name;
+        }
     }
 }

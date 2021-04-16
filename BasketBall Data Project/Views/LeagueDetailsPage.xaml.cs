@@ -15,8 +15,6 @@ namespace BasketBall_Data_Project.Views
         public LeagueDetailsPage()
         {
             InitializeComponent();
-
-            //LabelName.Text = name;
         }
     }
 }

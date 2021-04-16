@@ -4,7 +4,7 @@
              x:Class="BasketBall_Data_Project.Views.LeagueDetailsPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="LabelName" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -61,13 +61,12 @@ namespace BasketBall_Data_Project.ViewModels
             GetLeaguesAsync();
             ShowDetails = new DelegateCommand<Datum>(async (leagueDetails) =>
             {
-                /*var navParameters = new NavigationParameters
+                var navParameters = new NavigationParameters
                 {
                     {"details", leagueDetails}
-                };*/
-                await _navigationService.NavigateAsync("/Navigate/Tabs/Leagues/LeagueDetails");
-            });
-            
+                }; 
+                await _navigationService.NavigateAsync("/Navigate/Tabs/Leagues/LeagueDetails",navParameters);
+            });            
         }
         private async void GetLeaguesAsync()
         {
