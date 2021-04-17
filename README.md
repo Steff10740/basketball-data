@@ -7,7 +7,7 @@ The project's requirements board can be accessed in [Trello](https://trello.com/
 ### UI Screenshots
 ### Team
 - Eddinson Geronimo De La Rosa (1072957)
--
+- Gabriel Alejandro Cruz Joa (1074387)
 -
 ### Libraries
 - NETStandard.Library
