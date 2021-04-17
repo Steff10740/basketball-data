@@ -5,10 +5,14 @@ The project's mockup can be accessed in [Figma](https://www.figma.com/file/DntJ4
 ### Board
 The project's requirements board can be accessed in [Trello](https://trello.com/b/6T5ufA8x/ludis-virtual).
 ### UI Screenshots
+| | | |
+|---|---|---|
+![screen1](Screenshots/Screenshot_20210417-004139.png) | ![screen1](Screenshots/Screenshot_20210417-005154.png) | ![screen1](Screenshots/Screenshot_20210417-005158.png) | 
+![screen1](Screenshots/Screenshot_20210417-003316.png)
 ### Team
 - Eddinson Geronimo De La Rosa (1072957)
 - Gabriel Alejandro Cruz Joa (1074387)
--
+- Stefanny Lora (1074000)
 ### Libraries
 - NETStandard.Library
 - Newtonsoft.Json
