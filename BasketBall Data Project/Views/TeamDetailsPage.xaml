@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BasketBall_Data_Project.Views.TeamDetailsPage"
-             Title="{Binding Title}">
+             Title="{Binding Name}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Image Source="{Binding Logo}"/>
-            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding Name}" Style="{StaticResource Labels}"/>
+            <Label Text="Country:" Style="{StaticResource Labels}"/>
+            <Label Text="{Binding Country}" Style="{StaticResource Labels}"/>
+            <Label Text="Foundation:" Style="{StaticResource Labels}"/>
+            <Label Text="{Binding Foundation}" Style="{StaticResource Labels}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

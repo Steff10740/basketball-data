@@ -32,11 +32,11 @@ namespace BasketBall_Data_Project.ViewModels
 
             LoadTeams();
 
-            ShowDetails = new DelegateCommand<Datum>(async (teamDetails) =>
+            ShowDetailCommand = new DelegateCommand<Datum>(async (teamDetails) =>
             {
                 var navParameters = new NavigationParameters
                 {
-                    {"details", teamDetails}
+                    {ParameterConstants.Team, teamDetails}
                 };
                 await _navigationService.NavigateAsync(NavigationConstants.TeamDetails, navParameters);
             });
@@ -47,7 +47,7 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = true;
             if (!(Connectivity.NetworkAccess == NetworkAccess.Internet))
             {
-                await AlertService.DisplayAlertAsync("Error", "No internet connection, try later.","Ok");
+                await AlertService.DisplayAlertAsync( AlertDialogConstants.Error, AlertDialogConstants.NoInternet, AlertDialogConstants.Ok);
             }
             else
             {
@@ -56,9 +56,5 @@ namespace BasketBall_Data_Project.ViewModels
             }
             IsBusy = false;
         }
-
-        public ICommand ShowDetails { get; }
-
     }
-
 }

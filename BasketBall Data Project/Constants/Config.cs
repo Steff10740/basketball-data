@@ -8,6 +8,7 @@ namespace BasketBall_Data_Project.Constants
     {
         // Api URL
         public const string ApiUrl = "https://sportscore1.p.rapidapi.com/sports/3";
+        public const string EventApiUrl = "https://sportscore1.p.rapidapi.com/events/date/";
 
         // Tabs' Titles
         public const string TeamTitle = "Teams";

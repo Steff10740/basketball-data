@@ -19,7 +19,7 @@ namespace BasketBall_Data_Project.ViewModels
         public void OnNavigatedFrom(INavigationParameters parameters) { }
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            LiveGameDetails = parameters.GetValue<Datum>("details");
+            LiveGameDetails = parameters.GetValue<Datum>(ParameterConstants.Event);
             Name = LiveGameDetails.Name;
         }
     }

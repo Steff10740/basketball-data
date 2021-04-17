@@ -17,13 +17,13 @@ namespace BasketBall_Data_Project.Services
             _serializerService = serializerService;
         }
 
-        public async Task<Event> GetInfoAsync()
+        public async Task<Events> GetInfoAsync()
         {
-            Event Events = null;
+            Events Events = null;
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://sportscore1.p.rapidapi.com/events/date/{Date}"),
+                RequestUri = new Uri($"{Config.EventApiUrl}{Date}"),
                 Headers =
                 {
                     { Config.ApiKeyHeader, Config.ApiKey },
@@ -34,7 +34,7 @@ namespace BasketBall_Data_Project.Services
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
-                Events = _serializerService.Deserialize<Event>(await response.Content.ReadAsStringAsync());
+                Events = _serializerService.Deserialize<Events>(await response.Content.ReadAsStringAsync());
             }
             return Events;
         }
