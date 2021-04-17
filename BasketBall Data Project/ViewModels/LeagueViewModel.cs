@@ -34,7 +34,7 @@ namespace BasketBall_Data_Project.ViewModels
             {
                 var navParameters = new NavigationParameters
                 {
-                    {"details", leagueDetails}
+                    {ParameterConstants.League, leagueDetails}
                 }; 
                 await _navigationService.NavigateAsync(NavigationConstants.LeagueDetails,navParameters);
             });            
@@ -43,7 +43,7 @@ namespace BasketBall_Data_Project.ViewModels
         {
             if (!(Connectivity.NetworkAccess == NetworkAccess.Internet))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "No internet access.", "OK");
+                await AlertService.DisplayAlertAsync(AlertDialogConstants.Error, AlertDialogConstants.NoInternet, AlertDialogConstants.Ok);
                 return;
             }
             IsDataVisible = false;

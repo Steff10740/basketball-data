@@ -2,11 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BasketBall_Data_Project.Views.TeamDetailsPage"
-             Title="{Binding Title}">
+             Title="{Binding Name}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="{Binding Logo}"/>
-            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
-        </StackLayout>
+        <Grid RowDefinitions="2*,*,*,*,*"
+            ColumnDefinitions="*">
+            <Image Grid.Row="0"
+               Source="{Binding Logo}"/>
+            <Label Grid.Row="1"
+               Text="{Binding Name}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+            <Grid Grid.Row="2"
+              RowDefinitions="*,*"
+              ColumnDefinitions="*">
+                <Label Grid.Row="0"
+               Text="Country"
+               FontAttributes="Bold"
+               TextColor="#000000"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+                <Label Grid.Row="1"
+               Text="{Binding Country}"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

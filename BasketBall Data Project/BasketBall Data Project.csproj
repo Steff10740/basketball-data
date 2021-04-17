@@ -34,9 +34,6 @@
     <Compile Update="Views\LiveGamePage.xaml.cs">
       <DependentUpon>LiveGamePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\StandingPage.xaml.cs">
-      <DependentUpon>StandingPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\TeamPage.xaml.cs">
       <DependentUpon>TeamPage.xaml</DependentUpon>
     </Compile>
@@ -56,12 +53,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LeaguePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\SeasonPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\StandingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TeamDetailsPage.xaml">

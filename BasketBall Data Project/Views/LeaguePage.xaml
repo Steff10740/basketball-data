@@ -6,32 +6,32 @@
              x:Name="leagueDetails"
              xmlns:prism="http://prismlibrary.com">
 
-  <ContentPage.Content>
-    <Grid RowDefinitions="*" ColumnDefinitions="*">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*" ColumnDefinitions="*">
 
-      <ActivityIndicator IsRunning="{Binding IsBusy}"
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
                          IsVisible="{Binding IsBusy}"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
                          Grid.Row="0"/>
 
-      <ListView ItemsSource="{Binding LeaguesData}" 
+            <ListView ItemsSource="{Binding LeaguesData}" 
                 IsVisible="{Binding IsDataVisible}" 
                 Grid.Row="0">
-        <ListView.Behaviors>
-          <prism:EventToCommandBehavior EventName="ItemTapped"
+                <ListView.Behaviors>
+                    <prism:EventToCommandBehavior EventName="ItemTapped"
                                         Command="{Binding ShowDetails}"
                                         EventArgsParameterPath="Item"/>
-        </ListView.Behaviors>        
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ImageCell ImageSource="{Binding Logo}" 
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Logo}" 
                        Text="{Binding Name}" 
                        TextColor="Black"/>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-    </Grid>
-  </ContentPage.Content>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

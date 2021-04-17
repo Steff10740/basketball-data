@@ -1,5 +1,6 @@
 ﻿using BasketBall_Data_Project.Constants;
 using BasketBall_Data_Project.Models;
+using BasketBall_Data_Project.Models.Event;
 using BasketBall_Data_Project.Services;
 using Prism.Commands;
 using Prism.Navigation;
@@ -29,16 +30,16 @@ namespace BasketBall_Data_Project.ViewModels
             _eventApiService = eventApiService;
             _navigationService = navigationService;
             LoadLiveGames();
-            
 
-            ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
-            {
-                var navParameters = new NavigationParameters
-                {
-                    {"details", gameDetails}
-                };
-                await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
-            });
+
+            //ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
+            //{
+            //    var navParameters = new NavigationParameters
+            //    {
+            //        { ParameterConstants.Event, gameDetails}
+            //    };
+            //    await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
+            //});
         }
 
         private async void LoadLiveGames()
@@ -46,7 +47,7 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = true;
             if (!(Connectivity.NetworkAccess == NetworkAccess.Internet))
             {
-                await AlertService.DisplayAlertAsync("Error", "No internet connection, try later.", "Ok");
+                await AlertService.DisplayAlertAsync(AlertDialogConstants.Error, AlertDialogConstants.NoInternet, AlertDialogConstants.Ok);
             }
             else
             {

@@ -12,7 +12,7 @@
                   >
             <ListView.Behaviors>
                 <prism:EventToCommandBehavior EventName="ItemTapped"
-                                        Command="{Binding ShowDetails}"
+                                        Command="{Binding ShowDetailCommand}"
                                         EventArgsParameterPath="Item"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>

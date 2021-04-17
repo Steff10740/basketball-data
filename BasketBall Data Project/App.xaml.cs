@@ -25,7 +25,6 @@ namespace BasketBall_Data_Project
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<ITeamApiService, TeamApiService>();
-            containerRegistry.Register<ISeasonApiService, SeasonApiService>();
             containerRegistry.Register<ILeagueApiService, LeagueApiService>();
             containerRegistry.Register<ISerializerService, SerializerService>();
             containerRegistry.Register<IEventApiService, EventApiService>();
@@ -35,10 +34,8 @@ namespace BasketBall_Data_Project
             containerRegistry.RegisterForNavigation<LeaguePage>(NavigationConstants.League);
             containerRegistry.RegisterForNavigation<LeagueDetailsPage>(NavigationConstants.LeagueDetails);
 
-            //containerRegistry.RegisterForNavigation<StandingPage, StandingViewModel>(NavigationConstants.Standing);
             containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConstants.League);
             containerRegistry.RegisterForNavigation<EventPage, LiveGameViewModel>(NavigationConstants.Event);
-            containerRegistry.RegisterForNavigation<SeasonPage, LeagueViewModel>(NavigationConstants.Season);
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConstants.Team);
             containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
             containerRegistry.RegisterForNavigation<TeamDetailsPage, TeamDetailsViewModel>(NavigationConstants.TeamDetails);

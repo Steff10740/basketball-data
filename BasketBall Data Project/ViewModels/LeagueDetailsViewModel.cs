@@ -23,7 +23,7 @@ namespace BasketBall_Data_Project.ViewModels
         public void OnNavigatedFrom(INavigationParameters parameters){}
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            LeagueDetails = parameters.GetValue<Datum>("details");
+            LeagueDetails = parameters.GetValue<Datum>(ParameterConstants.League);
             Name = LeagueDetails.Name;
             Logo = LeagueDetails.Logo;
             Country = LeagueDetails.Host.Country;
