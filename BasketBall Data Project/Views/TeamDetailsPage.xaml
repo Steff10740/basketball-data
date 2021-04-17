@@ -4,13 +4,31 @@
              x:Class="BasketBall_Data_Project.Views.TeamDetailsPage"
              Title="{Binding Name}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="{Binding Logo}"/>
-            <Label Text="{Binding Name}" Style="{StaticResource Labels}"/>
-            <Label Text="Country:" Style="{StaticResource Labels}"/>
-            <Label Text="{Binding Country}" Style="{StaticResource Labels}"/>
-            <Label Text="Foundation:" Style="{StaticResource Labels}"/>
-            <Label Text="{Binding Foundation}" Style="{StaticResource Labels}"/>
-        </StackLayout>
+        <Grid RowDefinitions="2*,*,*,*,*"
+            ColumnDefinitions="*">
+            <Image Grid.Row="0"
+               Source="{Binding Logo}"/>
+            <Label Grid.Row="1"
+               Text="{Binding Name}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+            <Grid Grid.Row="2"
+              RowDefinitions="*,*"
+              ColumnDefinitions="*">
+                <Label Grid.Row="0"
+               Text="Country"
+               FontAttributes="Bold"
+               TextColor="#000000"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+                <Label Grid.Row="1"
+               Text="{Binding Country}"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

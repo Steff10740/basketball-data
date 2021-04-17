@@ -32,16 +32,14 @@ namespace BasketBall_Data_Project.ViewModels
             LoadLiveGames();
 
 
-            ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
-            {
-                var navParameters = new NavigationParameters
-                {
-                    { ParameterConstants.Event, gameDetails}
-                };
-                await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
-            });
-
-            //GetGame();
+            //ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
+            //{
+            //    var navParameters = new NavigationParameters
+            //    {
+            //        { ParameterConstants.Event, gameDetails}
+            //    };
+            //    await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
+            //});
         }
 
         private async void LoadLiveGames()
@@ -58,26 +56,5 @@ namespace BasketBall_Data_Project.ViewModels
             }
             IsBusy = false;
         }
-
-
-        //private void GetGame()
-        //{
-        //    Events = new ObservableCollection<Datum>();
-        //    var events = new Datum
-        //    {
-        //        AwayTeam = new AwayTeam(),
-        //        HomeTeam = new HomeTeam(),
-        //        AwayScore = new AwayScore(),
-        //        HomeScore = new HomeScore()
-        //    };
-
-        //    events.AwayTeam.Logo = "http://tipsscore.com/storage/team-logo/at/la/atlanta-hawks.png";
-        //    events.HomeTeam.Logo = "http://tipsscore.com/storage/team-logo/da/ll/dallas-mavericks.png";
-        //    events.AwayScore.Current = 103;
-        //    events.HomeScore.Current = 114;
-        //    events.HomeScore.Point = "114 - 103";
-
-        //    Events.Add(events);
-        //}
     }
 }
