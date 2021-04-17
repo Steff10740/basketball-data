@@ -4,10 +4,63 @@
              x:Class="BasketBall_Data_Project.Views.LeagueDetailsPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="{Binding Logo}"/>
-            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Image Source="https://tipsscore.com/storage/team-logo/bo/ca/boca-juniors.png"/>
-        </StackLayout>
+      <Grid RowDefinitions="2*,*,*,*,*"
+            ColumnDefinitions="*">
+        <Image Grid.Row="0"
+               Source="{Binding Logo}"/>
+        <Label Grid.Row="1"
+               Text="{Binding Name}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <Grid Grid.Row="2"
+              RowDefinitions="*,*"
+              ColumnDefinitions="*">
+          <Label Grid.Row="0"
+               Text="Country"
+               FontAttributes="Bold"
+               TextColor="#000000"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+          <Label Grid.Row="1"
+               Text="{Binding Country}"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
+        </Grid>
+        <Grid Grid.Row="3"
+              RowDefinitions="*,*"
+              ColumnDefinitions="*">
+          <Label Grid.Row="0"
+               Text="Division"
+               FontAttributes="Bold"
+               TextColor="#000000"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+          <Label Grid.Row="1"
+               Text="{Binding Division}"
+               TextColor="#000080"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
+        </Grid>
+        <Grid Grid.Row="4"
+              RowDefinitions="*,*"
+              ColumnDefinitions="*">
+          <Label Grid.Row="0"
+               Text="Rounds"
+               FontAttributes="Bold"
+               TextColor="#000000"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+          <Label Grid.Row="1"
+               Text="{Binding Rounds}"
+               FontAttributes="Bold"
+               TextColor="#000080"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
+        </Grid>
+      </Grid>
     </ContentPage.Content>
 </ContentPage>

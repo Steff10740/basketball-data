@@ -15,22 +15,20 @@ namespace BasketBall_Data_Project.ViewModels
         public Datum LeagueDetails { get; set; }
         public string Name { get; set; }
         public string Logo { get; set; }
+        public string Country { get; set; }
+        public string Division { get; set; }
+        public string Rounds { get; set; }
 
-        public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
-        {
-            //string name = LeagueDetails.Name;
-            //Name = name; //LeagueDetails.Name;
-        }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            //throw new NotImplementedException();
-        }
+        public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService){}
+        public void OnNavigatedFrom(INavigationParameters parameters){}
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             LeagueDetails = parameters.GetValue<Datum>(ParameterConstants.League);
             Name = LeagueDetails.Name;
             Logo = LeagueDetails.Logo;
+            Country = LeagueDetails.Host.Country;
+            Division = LeagueDetails.Facts[0].Value;
+            Rounds = LeagueDetails.Facts[1].Value;
         }
     }
 }
