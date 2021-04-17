@@ -18,11 +18,5 @@ namespace BasketBall_Data_Project.Views
         {
             InitializeComponent();
         }
-
-        /*private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
-        {
-            var details = e.Item as Datum;
-            await Navigation.PushAsync(new LeagueDetailsPage(details.Name));
-        }*/
     }
 }

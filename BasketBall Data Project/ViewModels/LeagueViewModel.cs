@@ -53,15 +53,5 @@ namespace BasketBall_Data_Project.ViewModels
             IsBusy = false;
             IsDataVisible = true;
         }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
