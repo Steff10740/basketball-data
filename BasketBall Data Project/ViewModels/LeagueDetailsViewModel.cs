@@ -16,16 +16,8 @@ namespace BasketBall_Data_Project.ViewModels
         public string Name { get; set; }
         public string Logo { get; set; }
 
-        public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService)
-        {
-            //string name = LeagueDetails.Name;
-            //Name = name; //LeagueDetails.Name;
-        }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            //throw new NotImplementedException();
-        }
+        public LeagueDetailsViewModel(INavigationService navigationService, IPageDialogService pageDialogService, LeagueApiService leagueApiService) : base(navigationService, pageDialogService){}
+        public void OnNavigatedFrom(INavigationParameters parameters){}
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             LeagueDetails = parameters.GetValue<Datum>("details");
