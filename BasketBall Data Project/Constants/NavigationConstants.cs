@@ -6,6 +6,7 @@ namespace BasketBall_Data_Project.Constants
 {
     public static class NavigationConstants
     {
+        public const string Home = "/Navigate/Tabs";
         public const string Navigate = "Navigate";
         public const string Tabs = "Tabs";
         public const string Standing = "Standing";
@@ -15,6 +16,5 @@ namespace BasketBall_Data_Project.Constants
         public const string Team = "Team";
         public const string LeagueDetails = "LeagueDetails";
         public const string TeamDetails = "TeamDetails";
-        public const string LiveGameDetails = "LiveGameDetails";
     }
 }

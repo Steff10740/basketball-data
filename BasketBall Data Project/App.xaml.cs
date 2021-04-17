@@ -16,8 +16,7 @@ namespace BasketBall_Data_Project
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            string initialPath = $"/{NavigationConstants.Navigate}/{NavigationConstants.Tabs}";
-            await NavigationService.NavigateAsync(initialPath);
+            await NavigationService.NavigateAsync(NavigationConstants.Home);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -30,14 +29,12 @@ namespace BasketBall_Data_Project
             containerRegistry.RegisterForNavigation<CustomTabbedPage>(NavigationConstants.Tabs);
             containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Navigate);
             containerRegistry.RegisterForNavigation<LeaguePage>(NavigationConstants.League);
-            containerRegistry.RegisterForNavigation<LeagueDetailsPage>(NavigationConstants.LeagueDetails);
 
             containerRegistry.RegisterForNavigation<LeaguePage, LeagueViewModel>(NavigationConstants.League);
             containerRegistry.RegisterForNavigation<EventPage, LiveGameViewModel>(NavigationConstants.Event);
             containerRegistry.RegisterForNavigation<TeamPage, TeamViewModel>(NavigationConstants.Team);
-            containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
             containerRegistry.RegisterForNavigation<TeamDetailsPage, TeamDetailsViewModel>(NavigationConstants.TeamDetails);
-            containerRegistry.RegisterForNavigation<LiveGameDetailsPage, LiveGameDetailsViewModel>(NavigationConstants.LiveGameDetails);
+            containerRegistry.RegisterForNavigation<LeagueDetailsPage, LeagueDetailsViewModel>(NavigationConstants.LeagueDetails);
         }
     }
 }

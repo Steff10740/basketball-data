@@ -30,16 +30,6 @@ namespace BasketBall_Data_Project.ViewModels
             _eventApiService = eventApiService;
             _navigationService = navigationService;
             LoadLiveGames();
-
-
-            //ShowDetails = new DelegateCommand<Datum>(async (gameDetails) =>
-            //{
-            //    var navParameters = new NavigationParameters
-            //    {
-            //        { ParameterConstants.Event, gameDetails}
-            //    };
-            //    await _navigationService.NavigateAsync(NavigationConstants.LiveGameDetails, navParameters);
-            //});
         }
 
         private async void LoadLiveGames()

@@ -11,7 +11,7 @@ namespace BasketBall_Data_Project.ViewModels
 {
     public class LeagueDetailsViewModel : BaseViewModel, INavigationAware
     {
-        public override string Title { get; set; } = Config.DetailsTitle;
+        public override string Title { get; set; } = Config.LeagueTitle;
         public Datum LeagueDetails { get; set; }
         public string Name { get; set; }
         public string Logo { get; set; }
