@@ -5,9 +5,7 @@ using BasketBall_Data_Project.Views;
 using Prism;
 using Prism.Ioc;
 using Prism.Unity;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BasketBall_Data_Project
 {
